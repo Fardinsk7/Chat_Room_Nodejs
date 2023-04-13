@@ -1,0 +1,1 @@
+Just need install node_modules with the help of npm i in terminal and run the server
