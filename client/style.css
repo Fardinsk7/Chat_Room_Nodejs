@@ -12,7 +12,6 @@ nav h1{
     font-size: 45px;
 }
 nav{
-    /* border:1px solid black; */
     padding:0px 10px;
     box-shadow: 1px 2px 15px 3px rgb(233, 230, 230);
     color:white;
@@ -42,7 +41,6 @@ nav .toggleBtn{
 }
  .container{
     height: 500px;
-    /* border: 1px solid white; */
     width: 60vw;
     margin: 20px auto;
     background: rgb(41, 41, 62);
@@ -56,7 +54,6 @@ nav .toggleBtn{
 
 .message{
     color:white;
-    /* border: 1px solid white; */
     width: 300px;
     padding: 10px 20px;
     background: rgb(0, 115, 255);
@@ -104,7 +101,6 @@ nav .toggleBtn{
 }
 
 .send{
-    /* border:1px solid white; */
     width:60vw;
     text-align: center;
     margin:auto;
@@ -203,11 +199,9 @@ nav .toggleBtn{
         border:none;
         background: transparent;
         float:left;
-        /* border:1px solid white */
     }
     #send-container .btn{
-        /* border:1px solid white; */
-        /* float:right; */
+       
         width:10%;
         display:flex;
         justify-content: center;
@@ -228,23 +222,3 @@ nav .toggleBtn{
     }
     
 }
-
-/* @media screen and (max-width:1100px) {
-    .container{
-        height: 91vh;
-    }
-    #send-container input[type=text]{
-        width:90vw;
-        padding: 10px;
-        border:none;
-        background: transparent;
-        font-size: 20px;
-    }
-    .send{
-        margin:5px 0;
-        border:1px solid white;
-    }
-    #send-container .btn{
-        font-size: 25px;
-    }
-} */

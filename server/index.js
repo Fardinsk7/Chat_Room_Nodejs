@@ -8,36 +8,22 @@ const  io = require('socket.io')(7000,{
     }
 })
 
-function getRandomArbitrary(min, max) {
-    const r = Math.floor(Math.random() * (max - min) + min);
-    const g = Math.floor(Math.random() * (max - min) + min);
-    const b= Math.floor(Math.random() * (max - min) + min);
-    return `rgb(${r},${g},${b})`;
-  }
-let color="kjklj";
-const setcolor = (col)=>{
-    color=col
-}
-
 const users ={};
 
-
 io.on('connection',(socket)=>{
-    //What happen to a particular connection will be handled by socket.on
+    //when new user joined it will broadcast to all
     socket.on('new-user-joined',name =>{
         console.log(name)
         users[socket.id] = name;
         socket.broadcast.emit('user-joined',name);
     });
 
-    socket.on('getcolor',color=>{
-        socket.broadcast.emit('color',color)
-    })
-    
+    //when message is send in room will braodcast to all
     socket.on('send',message=>{
         socket.broadcast.emit('receive',{message:message.message,name:users[socket.id],color:message.color});
     });
 
+    //When user is outoff chatoff it will broadcast to everyone that he has left
     socket.on('disconnect',message =>{
         socket.broadcast.emit('left',users[socket.id])
         delete users[socket.id]
