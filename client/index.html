@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="http://localhost:7000/socket.io/socket.io.js"></script>
+    <!-- <script src="https://cdn.socket.io/3.1.3/socket.io.min.js"></script> -->
+
+    <script src="client.js" defer></script>
+    <script src="https://kit.fontawesome.com/2b55327f4c.js" crossorigin="anonymous" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body class="">
+    <nav >
+        <h1>Chat Room</h1>
+        <button class="toggleBtn" title="Change Theme"><i class="fa-regular fa-sun"></i> <i class="fa-regular fa-moon"></i></button>
+    </nav>
+    <div class="main">
+        <div class="container">
+            <!-- <div class="message right"><div class="name" id="name">Fardin<span>12/11/2003 12:23</span></div>
+                Fardin: Hello Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, sint?</div>
+            <div class="newUser">NewUser...  </div>
+          <div class="message left"><div class="name">Fardin</div>Else: Hello Lorem ipsum dolor sit amet.</div>   -->
+        </div>
+
+        <div class="send">
+            <form id="send-container">
+                <input type="text" name="messageInp" id="messageInp" placeholder="Type your message here"/>
+                <button class="btn" type="submit"><i class="fa-regular fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

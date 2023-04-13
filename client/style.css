@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&family=Poppins&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+nav h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 45px;
+}
+nav{
+    /* border:1px solid black; */
+    padding:0px 10px;
+    box-shadow: 1px 2px 15px 3px rgb(233, 230, 230);
+    color:white;
+    background: rgb(40, 39, 39);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .toggleBtn{
+    height:40px;
+    padding: 0 17px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline:none;
+    border:none;
+    background: white;
+}
+.main{
+    background: rgb(175,172,172);
+    background: linear-gradient(150deg, rgba(175,172,172,1) 0%, rgba(130,127,127,1) 15%, rgba(48,47,47,1) 100%);
+    background-repeat: no-repeat;
+    height: calc(100vh - 68px);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+ .container{
+    height: 500px;
+    /* border: 1px solid white; */
+    width: 60vw;
+    margin: 20px auto;
+    background: rgb(41, 41, 62);
+    box-shadow: 20px 50px 50px 1px rgb(58, 58, 58);
+    overflow-y: auto;
+    margin-bottom: 0;
+}
+.container::-webkit-scrollbar {
+    display: none;
+  }
+
+.message{
+    color:white;
+    /* border: 1px solid white; */
+    width: 300px;
+    padding: 10px 20px;
+    background: rgb(0, 115, 255);
+    margin:20px;
+    word-break: break-all;
+}
+
+.message .name{
+    font-size: 12px;
+    color:orange;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+}
+
+.newUser{
+    color:rgb(42, 40, 40);
+    background:rgb(171, 170, 170);
+    font-weight: 700;
+    text-align: center;
+    clear:both;
+    width: 200px;
+    margin:auto;
+    padding: 5px 10px;
+    border-radius: 25px;
+    opacity: 0.3;
+    margin: 10px auto;
+    font-size: 12px;
+}
+.active .newUser{
+    opacity: 0.7;
+}
+.right{
+    background: rgb(76, 77, 79);
+    border-radius:20px 20px 0 20px;
+    clear: both;
+    float:right;
+}
+.left{
+    border-radius:20px 20px 20px 0;
+    clear:both;
+    float:left;
+}
+
+.send{
+    /* border:1px solid white; */
+    width:60vw;
+    text-align: center;
+    margin:auto;
+    margin-top: 0;
+}
+#send-container input[type=text] {
+    border:3px solid grey;
+    outline:none;
+    padding:8px 10px;
+    font-size: 18px;
+    width:90%;
+    border-radius: 5px;
+    background: rgb(50, 50, 50);
+    color:white;
+}
+#send-container .btn{
+    color:white;
+    background: rgb(0, 115, 255);
+    font-size: 20px;
+    padding:7px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border:none;
+}
+
+.toggleBtn .fa-moon{
+    display:none;
+}
+.fa-sun{
+    display:block;
+}
+
+
+.active nav{
+    background: white;
+    color: rgb(33, 32, 32)
+}
+
+.active .fa-sun{
+    display:none;
+}
+.active .fa-moon{
+    display:block
+}
+.active .toggleBtn{
+    background: rgb(42, 42, 42);
+    color: white;
+}
+.active .main{
+    background: rgb(240, 238, 238);
+}
+.active .main .container{
+    background: white;
+    box-shadow: 20px 50px 50px 1px rgb(197, 196, 196);
+}
+.active #send-container input[type=text]{
+    background: white;
+    color:black;
+    border: 3px solid rgb(227, 226, 226);
+}
+.active #send-container .btn{
+    border:none;
+}
+.active .message{
+    box-shadow: 1px 3px 10px 2px rgb(183, 183, 183);
+}
+
+
+@media screen and (max-width:950px) {
+    nav{
+        width:100vw;
+    }
+    .main{
+        padding:0;
+        margin:0;
+        width:100vw;
+    }
+    .container{
+        width:100vw;
+        height: 87vh;
+        margin:0;
+        box-shadow: none;
+    }
+    .message{
+        width:200px;
+        
+    }
+    .send{
+        width:100vw;  
+        /* border:5px solid white;       */
+        position:sticky;
+    }
+    #send-container input[type=text]{
+        width:85%;
+        padding: 10px;
+        border:none;
+        background: transparent;
+        float:left;
+        /* border:1px solid white */
+    }
+    #send-container .btn{
+        /* border:1px solid white; */
+        /* float:right; */
+        width:10%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin:auto;
+        padding:13px;
+    }
+    nav h1{
+        font-size: 30px;
+        padding:15px 0;
+    }
+    .active nav{
+        border-bottom: 1px solid grey;
+    }
+    .active #send-container input[type=text]{
+        background: transparent;
+        border: none;
+    }
+    
+}
+
+/* @media screen and (max-width:1100px) {
+    .container{
+        height: 91vh;
+    }
+    #send-container input[type=text]{
+        width:90vw;
+        padding: 10px;
+        border:none;
+        background: transparent;
+        font-size: 20px;
+    }
+    .send{
+        margin:5px 0;
+        border:1px solid white;
+    }
+    #send-container .btn{
+        font-size: 25px;
+    }
+} */
