@@ -17,9 +17,6 @@ function getRandomArbitrary(min, max) {
     return `rgb(${r},${g},${b})`;
   }
 const color= getRandomArbitrary(1,255)
-//   user.addEventListener('click',()=>{
-//     user.style.color = getRandomArbitrary()
-// })
 
 
   const current = ()=>{
@@ -27,14 +24,8 @@ const color= getRandomArbitrary(1,255)
     const date = `${today.getDate()}/${today.getMonth()}/${today.getFullYear()} ${today.getHours()}:${today.getMinutes()}`
     return date
 }
-// userName.addEventListener('click',()=>{
-    
-//     userName.style.color= getRandomArbitrary(1,255)
-//     const date = current()
-//     console.log(date)
-// })
 
-localStorage.setItem("color",getRandomArbitrary(1,255))
+
 
 
 
@@ -44,34 +35,30 @@ const append = (message,classes)=>{
     elementToApp.classList.add(classes)
     msgContainer.append(elementToApp)
     msgContainer.scrollTop = msgContainer.scrollHeight;
-    console.log("hello")
 }
 
-const append1 = (user,message,classes)=>{
-    // userName.style.color= getRandomArbitrary(1,255)
-
+const append1 = (user,message,classes,col)=>{
     const elementToApp = document.createElement('div');
     elementToApp.innerText= message;
     elementToApp.classList.add(classes)
     elementToApp.classList.add('message')
 
-    const htmlData = `<div class="name"style="color:${color}" >${user}<span>${current()}</span></div>`
+    const htmlData = `<div class="name"style="color:${col}" >${user}<span>${current()}</span></div>`
 
     elementToApp.insertAdjacentHTML("afterbegin",htmlData);
 
     msgContainer.append(elementToApp)
     msgContainer.scrollTop = msgContainer.scrollHeight;
-    console.log("hello")
 }
 
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
     let message = messageInp.value;
-    append1('You',message,'right')
+    append1('You',message,'right',color)
     messageInp.value =""
-    socket.emit('send',message)
+    socket.emit('send',{message,color})
     socket.emit('getcolor',color)
-    console.log(color)
+    
 })
 
 const name = prompt("Enter Your Name to Join")
@@ -82,8 +69,7 @@ append(`${data} joined at ${current()}`,'newUser')
 })
 
 socket.on('receive',data=>{
-    console.log(data)
-    append1( data.name,`${data.message}`,'left')
+    append1( data.name,`${data.message}`,'left',data.color)
 })
 
 //here we get name from server

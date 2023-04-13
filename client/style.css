@@ -70,6 +70,7 @@ nav .toggleBtn{
     font-weight: 700;
     display: flex;
     justify-content: space-between;
+
 }
 
 .newUser{
@@ -99,6 +100,7 @@ nav .toggleBtn{
     border-radius:20px 20px 20px 0;
     clear:both;
     float:left;
+    background: rgb(25, 25, 105);
 }
 
 .send{

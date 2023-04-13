@@ -15,6 +15,9 @@ function getRandomArbitrary(min, max) {
     return `rgb(${r},${g},${b})`;
   }
 let color="kjklj";
+const setcolor = (col)=>{
+    color=col
+}
 
 const users ={};
 
@@ -28,12 +31,11 @@ io.on('connection',(socket)=>{
     });
 
     socket.on('getcolor',color=>{
-        console.log(color)
-        color=color;
+        socket.broadcast.emit('color',color)
     })
     
     socket.on('send',message=>{
-        socket.broadcast.emit('receive',{message,name:users[socket.id],color:color});
+        socket.broadcast.emit('receive',{message:message.message,name:users[socket.id],color:message.color});
     });
 
     socket.on('disconnect',message =>{
